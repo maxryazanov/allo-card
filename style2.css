@@ -2,6 +2,35 @@
     margin: 0;
     padding: 0;
 }
+.container{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 110px repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+.header {
+    grid-area: 1 / 1 / 2 / 6;
+    
+
+    
+}
+.main {
+    grid-area: 2 / 2 / 3 / 3;
+    
+}
+.aside {
+    grid-area: 2 / 1 / 3 / 2;
+    
+}
+.footer{
+    grid-area: 3 / 2 / 4 / 3;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
 .montserrat700{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -149,12 +178,11 @@ main{
 .side-menu{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     box-sizing: border-box;
     padding: 20px 10px;
     border: 1px solid black;
-    width: 300px;
     margin-top: 40px;
 }
 .side-menu a{
@@ -202,8 +230,6 @@ main{
     background: #000;
 }
 .market{
-    margin: 0 auto;
-    max-width: 1414px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill,270px);
@@ -211,7 +237,6 @@ main{
 }
 
 .card2 {
-    position: relative;
     padding: 25px 10px;
     width: 250px;
     display: flex;
@@ -221,14 +246,10 @@ main{
     align-items: center;
     align-content: flex-end;
 }
-.card2:hover,.ribbon span:hover{
-    scale: 1.01;
+.card2:hover{
     box-shadow: 0 0 10px rgba(0,0,0,.4);
     transition: all .3s ease;
 }
-.ribbon span{
-    scale: 1.1;
-  }
 .info{
     display: flex;
     flex-direction: column;
@@ -286,124 +307,4 @@ main{
 .b-red:hover{
     opacity: .5;
     transition: all .2s ease;
-}
-.ribbon {
-    position: absolute;
-    right: -5px; top: -5px;
-    z-index: 1;
-    overflow: hidden;
-    width: 75px; height: 75px;
-    text-align: right;
-  }
-  .ribbon span {
-    font-size: 10px;
-    font-weight: bold;
-    color: #FFF;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 20px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    width: 100px;
-    display: block;
-    background: #E00027;;
-    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-    position: absolute;
-    top: 19px; right: -21px;
-  }
-  
-  .ribbon span::before {
-    content: "";
-    position: absolute; left: 0px; top: 100%;
-    z-index: -1;
-    border-left: 3px solid #E00027;
-    border-right: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    border-top: 3px solid #E00027;
-  }
-  .ribbon span::after {
-    content: "";
-    position: absolute; right: 0px; top: 100%;
-    z-index: -1;
-    border-left: 3px solid transparent;
-    border-right: 3px solid #E00027;
-    border-bottom: 3px solid transparent;
-    border-top: 3px solid #E00027;
-  }
-
-  .custom-select {
-	position: relative;
-}
-
-.custom-select select {
-	appearance: none;
-	-webkit-appearance: none;
-	width: 100%;
-	font-size: 16px;
-	padding: 0px 10px;
-	background-color: transparent;
-	color: #000000;
-	cursor: pointer;
-    border: none;
-}
-
-.custom-select select:focus {
-	background: transparent;
-	border-radius: 5px;
-}
-
-.custom-select::after {
-	content: "";
-	position: absolute;
-	pointer-events: none;
-	top: 50%;
-	right: 40px;
-	transform: translate(0, -50%);
-	width: 13px;
-	height: 13px;
-	background-color: #000000;
-	clip-path: polygon(50% 80%, 0 20%, 100% 20%);
-}
-
-.custom-selecta {
-	position: relative;
-    margin-right: 10px;
-}
-
-.custom-selecta select {
-	appearance: none;
-	-webkit-appearance: none;
-	width: 100%;
-	font-size: 16px;
-	padding: 0px 10px;
-	background-color: transparent;
-	color: #000000;
-	cursor: pointer;
-    border: none;
-}
-
-.custom-selecta select:focus {
-	background: transparent;
-	border-radius: 5px;
-}
-
-.custom-selecta::after {
-	content: "";
-	position: absolute;
-	pointer-events: none;
-	top: 50%;
-	right: -5px;
-	transform: translate(0, -50%);
-	width: 13px;
-	height: 13px;
-	background-color: #000000;
-	clip-path: polygon(50% 80%, 0 20%, 100% 20%);
-}
-
-
-
-@media only screen and (max-width: 1000px) {
-    .top-menu{
-        display: none;
-    }
 }
